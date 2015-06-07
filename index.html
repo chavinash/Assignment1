@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+var a=0,b=1,c;
+var inputNumber=prompt("Please enter fibonacci range number");
+document.write("Fibonacci");
+if(inputNumber!=undefined && !isNaN(inputNumber)){
+ 
+while (b<=parseInt(inputNumber))
+{
+if(c!=undefined)
+document.write(c);
+document.write("<br/>");
+c=a+b;
+a=b;
+b=c;
+}
+}
+</script>
+</head>
+<body>
+<h4> The above fibonacci number is generated using Javascript </h4>
+</body>
+</html>
