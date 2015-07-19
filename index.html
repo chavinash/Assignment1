@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Angular JS Table</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+<h2>My Grades in Harrisburg Courses</h2>
+<div ng-app="mainApp" ng-controller="studentController">
+<table class="table-layout">
+<tr><td>Enter first name:</td><td><input type="text" ng-model="student.firstName"></td></tr>
+<tr><td>Enter last name: </td><td><input type="text" ng-model="student.lastName"></td></tr>
+<tr><td>Name: </td><td>{{student.fullName()}}</td></tr>
+<tr><td>Courses:</td><td>
+<table>
+   <tr>
+      <th>Course</th>
+      <th>Grade</th>
+   </tr>
+   <tr ng-repeat="subject in student.subjects">
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.grade }}</td>
+   </tr>
+</table>
+</td></tr>
+</table>
+</div>
+<script src="script.js">
+
+</script>
+</body>
+</html>
